@@ -8,7 +8,7 @@ class TestCalculationsIntegration(unittest.TestCase):
 		self.client = app.test_client()
 
 	def test_calculation_integration(self):
-		response = self.client.post("/", data={"a": "8", "b", "2"})
+		response = self.client.post("/", data={"a": "8", "b": "2"})
 
 		html = response.data.decode("utf-8")
 		self.assertIn("Sum: 10.0", html)
